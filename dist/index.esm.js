@@ -2254,23 +2254,20 @@ var PanelBody = function (_a) {
     var location = useLocation();
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
-    return (React.createElement(Container$3, null,
-        links.map(function (entry) {
-            var Icon = Icons[entry.icon];
-            var iconElement = React.createElement(Icon, { width: "24px", mr: "8px" });
-            var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
-            if (entry.items) {
-                return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
-                    entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
-            }
-            return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
-                React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
-                    iconElement,
-                    React.createElement(LinkLabel, { isPushed: isPushed }, entry.label))));
-        }),
-        React.createElement("a", { href: "https://rugdoc.io/project/polyquail/" },
-            React.createElement("img", { alt: "KWIL", src: "/images/egg/rugdoc-review-badge-for-light-bg.png", style: { width: 185, height: 61, marginLeft: 21 } }))));
+    return (React.createElement(Container$3, null, links.map(function (entry) {
+        var Icon = Icons[entry.icon];
+        var iconElement = React.createElement(Icon, { width: "24px", mr: "8px" });
+        var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+        if (entry.items) {
+            return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
+                    React.createElement(MenuLink, { href: item.href }, item.label))); })));
+        }
+        return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
+            React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
+                iconElement,
+                React.createElement(LinkLabel, { isPushed: isPushed }, entry.label))));
+    })));
 };
 var templateObject_1$B;
 
@@ -2680,19 +2677,21 @@ var templateObject_1$K;
 
 var baseColors = {
     failure: "#ED4B9E",
-    primary: "#aa8929",
-    primaryBright: "#aa8929",
-    primaryDark: "#aa8929",
+    primary: "#0098A1",
+    primaryBright: "#0098A1",
+    primaryDark: "#0098A1",
     secondary: "#7645D9",
     success: "#31D0AA",
     warning: "#FFB237",
 };
+/** Brand Colors aren't used, ignore */
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
-        bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", tertiary: "#353547", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {
+        bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
+/** Dark Colors aren't used, ignore */
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
