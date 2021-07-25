@@ -2255,7 +2255,7 @@ var MenuLink = function (_a) {
     var href = _a.href, otherProps = __rest(_a, ["href"]);
     var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    var Tag = isHttpLink ? "a" : reactRouterDom.NavLink;
+    var Tag = isHttpLink ? 'a target="_blank"' : reactRouterDom.NavLink;
     var props = isHttpLink ? { href: href } : { to: href };
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };

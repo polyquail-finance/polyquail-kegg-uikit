@@ -5,9 +5,10 @@ const MenuLink: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, ...
   const isHttpLink = href?.startsWith("http");
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Tag: any = isHttpLink ? 'a target="_blank"' : NavLink;
+  const Tag: any = isHttpLink ? 'a' : NavLink;
   const props = isHttpLink ? { href } : { to: href };
-  return <Tag {...props} {...otherProps} />;
+  const target = isHttpLink ? 'target="_blank"':'';
+  return <Tag {...props} {...otherProps} {... target} />;
 };
 
 export default MenuLink;
