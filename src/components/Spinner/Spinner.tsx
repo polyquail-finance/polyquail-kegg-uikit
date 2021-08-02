@@ -32,7 +32,7 @@ const RotatingPancakeIcon = styled(SpinnerIcon)`
   transform: translate3d(0, 0, 0);
 `;
 
-const Spinner: React.FC<SpinnerProps> = ({ size = 128 }) => {
+const Spinner: React.FC<SpinnerProps> = ({ size = 300 }) => {
   return (
     <Container>
       <RotatingPancakeIcon width={`${size * 0.5}px`} />
